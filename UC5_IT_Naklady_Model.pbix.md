@@ -1,6 +1,7 @@
 ----
 
 [Home](../home.md) > [UC5_IT_Naklady_Model.pbix](UC5_IT_Naklady_Model.pbix.md)
+[Home](./index.md) > [UC5_IT_Naklady_Model.pbix](UC5_IT_Naklady_Model.pbix.md)
 
 [Information](#information) | [Model information](#model-information) | [Model relationships](#model-relationships) | [Report sections](#report-sections) | [Business objects](#business-objects) | [Measures](#measures) | [Relationships](#relationships) | [Hierarchies](#hierarchies) | [Columns](#columns) | 
 
