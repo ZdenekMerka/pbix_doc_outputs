@@ -101,59 +101,154 @@ id21(["Dátum[Date]"]) --> id30(["GLPCP Plán[Dátum]"])
 # Measures
 
 
-| ID | TABLE | NAME | DESCRIPTION | EXPRESSION | IS_HIDDEN | STATE |
-|----|-------|------|-------------|------------|-----------|-------|
-| 14247 | Účty |  | n/a | `
+<table>
+    <tr>
+        <th> ID </th><th> TABLE </th><th> NAME </th><th> DESCRIPTION </th><th> EXPRESSION </th><th> IS_HIDDEN </th><th> STATE </th>
+    </tr>
+<tr>
+        <td> 14247 </td><td> Účty </td><td>  </td><td> n/a </td><td> <code> 
 SWITCH (
     TRUE,
     LEFT ( 'Účty'[Číslo účtu], 1 ) = "5", "Náklad",
     LEFT ( 'Účty'[Číslo účtu], 1 ) = "6", "Výnos",
     "N/A"
-)` | False |  1 |  
-| 14690 | GLPCA Skutočnosť |  | n/a | `DATEVALUE ( "1/" & 'GLPCA Skutočnosť'[Mesiac] & "/" & 'GLPCA Skutočnosť'[Rok] )` | False |  1 |  
-| 15189 | GLPCP Plán |  | n/a | `DATEVALUE ( "1/" & 'GLPCP Plán'[Mesiac] & "/" & 'GLPCP Plán'[Rok] )` | False |  1 |  
-| 699 | DateTableTemplate_1b..(54) |  | n/a | `YEAR([Date])` | True |  1 |  
-| 700 | DateTableTemplate_1b..(54) |  | n/a | `MONTH([Date])` | True |  1 |  
-| 701 | DateTableTemplate_1b..(54) |  | n/a | `FORMAT([Date], "MMMM")` | True |  1 |  
-| 702 | DateTableTemplate_1b..(54) |  | n/a | `INT(([ČMesiaca] + 2) / 3)` | True |  1 |  
-| 703 | DateTableTemplate_1b..(54) |  | n/a | `"Štvrť " & [ČŠtvrťroka]` | True |  1 |  
-| 704 | DateTableTemplate_1b..(54) |  | n/a | `DAY([Date])` | True |  1 |  
-| 785 | LocalDateTable_601d7..(51) |  | n/a | `YEAR([Date])` | True |  1 |  
-| 786 | LocalDateTable_601d7..(51) |  | n/a | `MONTH([Date])` | True |  1 |  
-| 787 | LocalDateTable_601d7..(51) |  | n/a | `FORMAT([Date], "MMMM")` | True |  1 |  
-| 788 | LocalDateTable_601d7..(51) |  | n/a | `INT(([ČMesiaca] + 2) / 3)` | True |  1 |  
-| 789 | LocalDateTable_601d7..(51) |  | n/a | `"Štvrť " & [ČŠtvrťroka]` | True |  1 |  
-| 790 | LocalDateTable_601d7..(51) |  | n/a | `DAY([Date])` | True |  1 |  
-| 1380 | LocalDateTable_de5a9..(51) |  | n/a | `YEAR([Date])` | True |  1 |  
-| 1381 | LocalDateTable_de5a9..(51) |  | n/a | `MONTH([Date])` | True |  1 |  
-| 1382 | LocalDateTable_de5a9..(51) |  | n/a | `FORMAT([Date], "MMMM")` | True |  1 |  
-| 1383 | LocalDateTable_de5a9..(51) |  | n/a | `INT(([ČMesiaca] + 2) / 3)` | True |  1 |  
-| 1384 | LocalDateTable_de5a9..(51) |  | n/a | `"Štvrť " & [ČŠtvrťroka]` | True |  1 |  
-| 1385 | LocalDateTable_de5a9..(51) |  | n/a | `DAY([Date])` | True |  1 |  
-| 1805 | LocalDateTable_f8a05..(51) |  | n/a | `YEAR([Date])` | True |  1 |  
-| 1806 | LocalDateTable_f8a05..(51) |  | n/a | `MONTH([Date])` | True |  1 |  
-| 1807 | LocalDateTable_f8a05..(51) |  | n/a | `FORMAT([Date], "MMMM")` | True |  1 |  
-| 1808 | LocalDateTable_f8a05..(51) |  | n/a | `INT(([ČMesiaca] + 2) / 3)` | True |  1 |  
-| 1809 | LocalDateTable_f8a05..(51) |  | n/a | `"Štvrť " & [ČŠtvrťroka]` | True |  1 |  
-| 1810 | LocalDateTable_f8a05..(51) |  | n/a | `DAY([Date])` | True |  1 |  
-| 2208 | LocalDateTable_da163..(51) |  | n/a | `YEAR([Date])` | True |  1 |  
-| 2209 | LocalDateTable_da163..(51) |  | n/a | `MONTH([Date])` | True |  1 |  
-| 2210 | LocalDateTable_da163..(51) |  | n/a | `FORMAT([Date], "MMMM")` | True |  1 |  
-| 2211 | LocalDateTable_da163..(51) |  | n/a | `INT(([ČMesiaca] + 2) / 3)` | True |  1 |  
-| 2212 | LocalDateTable_da163..(51) |  | n/a | `"Štvrť " & [ČŠtvrťroka]` | True |  1 |  
-| 2213 | LocalDateTable_da163..(51) |  | n/a | `DAY([Date])` | True |  1 |  
-| 2970 | LocalDateTable_9198a..(51) |  | n/a | `YEAR([Date])` | True |  1 |  
-| 2971 | LocalDateTable_9198a..(51) |  | n/a | `MONTH([Date])` | True |  1 |  
-| 2972 | LocalDateTable_9198a..(51) |  | n/a | `FORMAT([Date], "MMMM")` | True |  1 |  
-| 2973 | LocalDateTable_9198a..(51) |  | n/a | `INT(([ČMesiaca] + 2) / 3)` | True |  1 |  
-| 2974 | LocalDateTable_9198a..(51) |  | n/a | `"Štvrť " & [ČŠtvrťroka]` | True |  1 |  
-| 2975 | LocalDateTable_9198a..(51) |  | n/a | `DAY([Date])` | True |  1 |  
-| 3468 | LocalDateTable_2b38b..(51) |  | n/a | `YEAR([Date])` | True |  1 |  
-| 3469 | LocalDateTable_2b38b..(51) |  | n/a | `MONTH([Date])` | True |  1 |  
-| 3470 | LocalDateTable_2b38b..(51) |  | n/a | `FORMAT([Date], "MMMM")` | True |  1 |  
-| 3471 | LocalDateTable_2b38b..(51) |  | n/a | `INT(([ČMesiaca] + 2) / 3)` | True |  1 |  
-| 3472 | LocalDateTable_2b38b..(51) |  | n/a | `"Štvrť " & [ČŠtvrťroka]` | True |  1 |  
-| 3473 | LocalDateTable_2b38b..(51) |  | n/a | `DAY([Date])` | True |  1 |  
+) </code></td><td> False </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 14690 </td><td> GLPCA Skutočnosť </td><td>  </td><td> n/a </td><td> <code> DATEVALUE ( "1/" & 'GLPCA Skutočnosť'[Mesiac] & "/" & 'GLPCA Skutočnosť'[Rok] ) </code></td><td> False </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 15189 </td><td> GLPCP Plán </td><td>  </td><td> n/a </td><td> <code> DATEVALUE ( "1/" & 'GLPCP Plán'[Mesiac] & "/" & 'GLPCP Plán'[Rok] ) </code></td><td> False </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 699 </td><td> DateTableTemplate_1b..(54) </td><td>  </td><td> n/a </td><td> <code> YEAR([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 700 </td><td> DateTableTemplate_1b..(54) </td><td>  </td><td> n/a </td><td> <code> MONTH([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 701 </td><td> DateTableTemplate_1b..(54) </td><td>  </td><td> n/a </td><td> <code> FORMAT([Date], "MMMM") </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 702 </td><td> DateTableTemplate_1b..(54) </td><td>  </td><td> n/a </td><td> <code> INT(([ČMesiaca] + 2) / 3) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 703 </td><td> DateTableTemplate_1b..(54) </td><td>  </td><td> n/a </td><td> <code> "Štvrť " & [ČŠtvrťroka] </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 704 </td><td> DateTableTemplate_1b..(54) </td><td>  </td><td> n/a </td><td> <code> DAY([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 785 </td><td> LocalDateTable_601d7..(51) </td><td>  </td><td> n/a </td><td> <code> YEAR([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 786 </td><td> LocalDateTable_601d7..(51) </td><td>  </td><td> n/a </td><td> <code> MONTH([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 787 </td><td> LocalDateTable_601d7..(51) </td><td>  </td><td> n/a </td><td> <code> FORMAT([Date], "MMMM") </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 788 </td><td> LocalDateTable_601d7..(51) </td><td>  </td><td> n/a </td><td> <code> INT(([ČMesiaca] + 2) / 3) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 789 </td><td> LocalDateTable_601d7..(51) </td><td>  </td><td> n/a </td><td> <code> "Štvrť " & [ČŠtvrťroka] </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 790 </td><td> LocalDateTable_601d7..(51) </td><td>  </td><td> n/a </td><td> <code> DAY([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 1380 </td><td> LocalDateTable_de5a9..(51) </td><td>  </td><td> n/a </td><td> <code> YEAR([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 1381 </td><td> LocalDateTable_de5a9..(51) </td><td>  </td><td> n/a </td><td> <code> MONTH([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 1382 </td><td> LocalDateTable_de5a9..(51) </td><td>  </td><td> n/a </td><td> <code> FORMAT([Date], "MMMM") </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 1383 </td><td> LocalDateTable_de5a9..(51) </td><td>  </td><td> n/a </td><td> <code> INT(([ČMesiaca] + 2) / 3) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 1384 </td><td> LocalDateTable_de5a9..(51) </td><td>  </td><td> n/a </td><td> <code> "Štvrť " & [ČŠtvrťroka] </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 1385 </td><td> LocalDateTable_de5a9..(51) </td><td>  </td><td> n/a </td><td> <code> DAY([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 1805 </td><td> LocalDateTable_f8a05..(51) </td><td>  </td><td> n/a </td><td> <code> YEAR([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 1806 </td><td> LocalDateTable_f8a05..(51) </td><td>  </td><td> n/a </td><td> <code> MONTH([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 1807 </td><td> LocalDateTable_f8a05..(51) </td><td>  </td><td> n/a </td><td> <code> FORMAT([Date], "MMMM") </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 1808 </td><td> LocalDateTable_f8a05..(51) </td><td>  </td><td> n/a </td><td> <code> INT(([ČMesiaca] + 2) / 3) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 1809 </td><td> LocalDateTable_f8a05..(51) </td><td>  </td><td> n/a </td><td> <code> "Štvrť " & [ČŠtvrťroka] </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 1810 </td><td> LocalDateTable_f8a05..(51) </td><td>  </td><td> n/a </td><td> <code> DAY([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 2208 </td><td> LocalDateTable_da163..(51) </td><td>  </td><td> n/a </td><td> <code> YEAR([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 2209 </td><td> LocalDateTable_da163..(51) </td><td>  </td><td> n/a </td><td> <code> MONTH([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 2210 </td><td> LocalDateTable_da163..(51) </td><td>  </td><td> n/a </td><td> <code> FORMAT([Date], "MMMM") </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 2211 </td><td> LocalDateTable_da163..(51) </td><td>  </td><td> n/a </td><td> <code> INT(([ČMesiaca] + 2) / 3) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 2212 </td><td> LocalDateTable_da163..(51) </td><td>  </td><td> n/a </td><td> <code> "Štvrť " & [ČŠtvrťroka] </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 2213 </td><td> LocalDateTable_da163..(51) </td><td>  </td><td> n/a </td><td> <code> DAY([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 2970 </td><td> LocalDateTable_9198a..(51) </td><td>  </td><td> n/a </td><td> <code> YEAR([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 2971 </td><td> LocalDateTable_9198a..(51) </td><td>  </td><td> n/a </td><td> <code> MONTH([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 2972 </td><td> LocalDateTable_9198a..(51) </td><td>  </td><td> n/a </td><td> <code> FORMAT([Date], "MMMM") </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 2973 </td><td> LocalDateTable_9198a..(51) </td><td>  </td><td> n/a </td><td> <code> INT(([ČMesiaca] + 2) / 3) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 2974 </td><td> LocalDateTable_9198a..(51) </td><td>  </td><td> n/a </td><td> <code> "Štvrť " & [ČŠtvrťroka] </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 2975 </td><td> LocalDateTable_9198a..(51) </td><td>  </td><td> n/a </td><td> <code> DAY([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 3468 </td><td> LocalDateTable_2b38b..(51) </td><td>  </td><td> n/a </td><td> <code> YEAR([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 3469 </td><td> LocalDateTable_2b38b..(51) </td><td>  </td><td> n/a </td><td> <code> MONTH([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 3470 </td><td> LocalDateTable_2b38b..(51) </td><td>  </td><td> n/a </td><td> <code> FORMAT([Date], "MMMM") </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 3471 </td><td> LocalDateTable_2b38b..(51) </td><td>  </td><td> n/a </td><td> <code> INT(([ČMesiaca] + 2) / 3) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 3472 </td><td> LocalDateTable_2b38b..(51) </td><td>  </td><td> n/a </td><td> <code> "Štvrť " & [ČŠtvrťroka] </code></td><td> True </td><td>  1 </td> 
+    </tr>
+<tr>
+        <td> 3473 </td><td> LocalDateTable_2b38b..(51) </td><td>  </td><td> n/a </td><td> <code> DAY([Date]) </code></td><td> True </td><td>  1 </td> 
+    </tr>
+</table>
+
+
 
 
 [Up](#)
@@ -198,58 +293,182 @@ SWITCH (
 # Columns 
 
 
-| ID | TABLE | EXPLICIT_NAME | DESCRIPTION | IS_HIDDEN | EXPRESSION |
-|----|-------|---------------|-------------|-----------|------------|
-| 34 | Účty | Číslo účtu | n/a | False | n/a |
-| 35 | Účty | Názov účtu | n/a | False | n/a |
-| 36 | Účty | Hierarchia | n/a | False | n/a |
-| 14247 | Účty | Trieda účtu | n/a | False | 
+<table>
+    <tr>
+        <th> ID </th><th> TABLE </th><th> EXPLICIT_NAME </th><th> DESCRIPTION </th><th> IS_HIDDEN </th><th> EXPRESSION </th>
+    </tr>
+<tr>
+        <td> 34 </td><td> Účty </td><td> Číslo účtu </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 35 </td><td> Účty </td><td> Názov účtu </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 36 </td><td> Účty </td><td> Hierarchia </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 14247 </td><td> Účty </td><td> Trieda účtu </td><td> n/a </td><td> False </td><td><code> 
 SWITCH (
     TRUE,
     LEFT ( 'Účty'[Číslo účtu], 1 ) = "5", "Náklad",
     LEFT ( 'Účty'[Číslo účtu], 1 ) = "6", "Výnos",
     "N/A"
-) |
-| 40 | Strediská | Číslo strediska | n/a | False | n/a |
-| 41 | Strediská | Stredisko | n/a | False | n/a |
-| 42 | Strediská | Hierarchia | n/a | False | n/a |
-| 46 | Zákazky | Zákazka | n/a | False | n/a |
-| 47 | Zákazky | Názov | n/a | False | n/a |
-| 50 | Dátum | Date | n/a | False | n/a |
-| 51 | Dátum | DimDateId | n/a | False | n/a |
-| 52 | Dátum | Rok | n/a | False | n/a |
-| 53 | Dátum | MonthId | n/a | False | n/a |
-| 54 | Dátum | MonthYear | n/a | False | n/a |
-| 55 | Dátum | MonthNameYear | n/a | False | n/a |
-| 56 | Dátum | Číslo mesiaca | n/a | False | n/a |
-| 57 | Dátum | Month | n/a | False | n/a |
-| 58 | Dátum | MonthShort | n/a | False | n/a |
-| 59 | Dátum | Day | n/a | False | n/a |
-| 60 | Dátum | DayOfWeekName | n/a | False | n/a |
-| 61 | Dátum | DayOfWeekNameShort | n/a | False | n/a |
-| 62 | Dátum | DayOfWeek | n/a | False | n/a |
-| 63 | Dátum | Quarter | n/a | False | n/a |
-| 64 | Dátum | YearQuarter | n/a | False | n/a |
-| 65 | Dátum | IsoWeek | n/a | False | n/a |
-| 66 | Dátum | IsoWeekBusiness | n/a | False | n/a |
-| 67 | Čas | DimTimeId | n/a | False | n/a |
-| 68 | Čas | hours | n/a | False | n/a |
-| 69 | Čas | minutes | n/a | False | n/a |
-| 70 | Čas | seconds | n/a | False | n/a |
-| 74 | GLPCA Skutočnosť | Mesiac | n/a | False | n/a |
-| 75 | GLPCA Skutočnosť | Rok | n/a | False | n/a |
-| 76 | GLPCA Skutočnosť | Suma | n/a | False | n/a |
-| 77 | GLPCA Skutočnosť | Mena | n/a | False | n/a |
-| 14690 | GLPCA Skutočnosť | Dátum | n/a | False | DATEVALUE ( "1/" & 'GLPCA Skutočnosť'[Mesiac] & "/" & 'GLPCA Skutočnosť'[Rok] ) |
-| 83 | GLPCP Plán | Mesiac | n/a | False | n/a |
-| 84 | GLPCP Plán | Rok | n/a | False | n/a |
-| 85 | GLPCP Plán | Suma | n/a | False | n/a |
-| 86 | GLPCP Plán | Mena | n/a | False | n/a |
-| 15189 | GLPCP Plán | Dátum | n/a | False | DATEVALUE ( "1/" & 'GLPCP Plán'[Mesiac] & "/" & 'GLPCP Plán'[Rok] ) |
+) </code></td>
+    </tr>
+
+<tr>
+        <td> 40 </td><td> Strediská </td><td> Číslo strediska </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 41 </td><td> Strediská </td><td> Stredisko </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 42 </td><td> Strediská </td><td> Hierarchia </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 46 </td><td> Zákazky </td><td> Zákazka </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 47 </td><td> Zákazky </td><td> Názov </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 50 </td><td> Dátum </td><td> Date </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 51 </td><td> Dátum </td><td> DimDateId </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 52 </td><td> Dátum </td><td> Rok </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 53 </td><td> Dátum </td><td> MonthId </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 54 </td><td> Dátum </td><td> MonthYear </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 55 </td><td> Dátum </td><td> MonthNameYear </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 56 </td><td> Dátum </td><td> Číslo mesiaca </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 57 </td><td> Dátum </td><td> Month </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 58 </td><td> Dátum </td><td> MonthShort </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 59 </td><td> Dátum </td><td> Day </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 60 </td><td> Dátum </td><td> DayOfWeekName </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 61 </td><td> Dátum </td><td> DayOfWeekNameShort </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 62 </td><td> Dátum </td><td> DayOfWeek </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 63 </td><td> Dátum </td><td> Quarter </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 64 </td><td> Dátum </td><td> YearQuarter </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 65 </td><td> Dátum </td><td> IsoWeek </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 66 </td><td> Dátum </td><td> IsoWeekBusiness </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 67 </td><td> Čas </td><td> DimTimeId </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 68 </td><td> Čas </td><td> hours </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 69 </td><td> Čas </td><td> minutes </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 70 </td><td> Čas </td><td> seconds </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 74 </td><td> GLPCA Skutočnosť </td><td> Mesiac </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 75 </td><td> GLPCA Skutočnosť </td><td> Rok </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 76 </td><td> GLPCA Skutočnosť </td><td> Suma </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 77 </td><td> GLPCA Skutočnosť </td><td> Mena </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 14690 </td><td> GLPCA Skutočnosť </td><td> Dátum </td><td> n/a </td><td> False </td><td><code> DATEVALUE ( "1/" & 'GLPCA Skutočnosť'[Mesiac] & "/" & 'GLPCA Skutočnosť'[Rok] ) </code></td>
+    </tr>
+
+<tr>
+        <td> 83 </td><td> GLPCP Plán </td><td> Mesiac </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 84 </td><td> GLPCP Plán </td><td> Rok </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 85 </td><td> GLPCP Plán </td><td> Suma </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 86 </td><td> GLPCP Plán </td><td> Mena </td><td> n/a </td><td> False </td><td><code> n/a </code></td>
+    </tr>
+
+<tr>
+        <td> 15189 </td><td> GLPCP Plán </td><td> Dátum </td><td> n/a </td><td> False </td><td><code> DATEVALUE ( "1/" & 'GLPCP Plán'[Mesiac] & "/" & 'GLPCP Plán'[Rok] ) </code></td>
+    </tr>
+
+</table>
+
 
 
 
 ----
 <p align="center">
-Generated at 14.12.2023 23:29:19 by <a href='https://github.com/dop12/pbix_doc'>PBIX DOC PROJECT</a> Git version: 46272be
+Generated at 15.12.2023 18:06:46 by <a href='https://github.com/dop12/pbix_doc'>PBIX DOC PROJECT</a> Git version: 40a3c4f
 </p>
